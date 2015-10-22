@@ -1,4 +1,4 @@
-package porojeto.util;
+package br.com.util;
 
 import java.sql.Connection;
 import java.sql.SQLException;

@@ -1,4 +1,4 @@
-package porojeto.util;
+package br.com.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,7 +14,7 @@ public class GerenciadorConexaoImpl implements GerenciadorConexao{
     private final String sen;
         
     private GerenciadorConexaoImpl(){
-        ResourceBundle rb = ResourceBundle.getBundle("porojeto.util.banco");
+        ResourceBundle rb = ResourceBundle.getBundle("br.com.util.banco");
         driver = rb.getString("driver");
         url = rb.getString("url");
         usu = rb.getString("usuario");
