@@ -2,7 +2,7 @@ package br.com.util;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import porojeto.erro.ConexaoException;
+import br.com.error.ConexaoException;
 
 /**
  *

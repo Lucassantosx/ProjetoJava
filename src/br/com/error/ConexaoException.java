@@ -1,4 +1,4 @@
-package porojeto.erro;
+package br.com.error;
 
 /**
  *

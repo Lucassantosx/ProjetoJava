@@ -6,7 +6,7 @@
 package principal;
 
 import javax.swing.JOptionPane;
-import porojeto.erro.ConexaoException;
+import br.com.error.ConexaoException;
 import br.com.util.GerenciadorConexao;
 import br.com.util.GerenciadorConexaoImpl;
 
@@ -33,7 +33,7 @@ public class Main {
              g.conectar();
                 JOptionPane.showMessageDialog(null, "Conexão Estabelicida");               
          } catch (ConexaoException e) {
-             JOptionPane.showMessageDialog(null, "Erro ao conectar com DB");
+             JOptionPane.showMessageDialog(null, "Erro ao conectar com DB" + e.getMessage());
          }
         }
     

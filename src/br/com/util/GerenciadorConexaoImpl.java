@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import porojeto.erro.ConexaoException;
+import br.com.error.ConexaoException;
 
 public class GerenciadorConexaoImpl implements GerenciadorConexao{
     private static GerenciadorConexaoImpl instancia;

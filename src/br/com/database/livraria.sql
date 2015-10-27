@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.5.0.2
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Out-2015 às 20:43
--- Versão do servidor: 5.6.26
--- PHP Version: 5.6.12
+-- Generation Time: 25-Out-2015 às 22:44
+-- Versão do servidor: 10.0.17-MariaDB
+-- PHP Version: 5.5.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `cliente`
 --
 
-CREATE TABLE IF NOT EXISTS `cliente` (
+CREATE TABLE `cliente` (
   `id_cliente` int(9) NOT NULL,
   `nome` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
   `identidade` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `endereco` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
   `telefone` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
   `email` varchar(100) COLLATE latin1_spanish_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Extraindo dados da tabela `cliente`
@@ -49,12 +49,12 @@ INSERT INTO `cliente` (`id_cliente`, `nome`, `identidade`, `cpf`, `endereco`, `t
 -- Estrutura da tabela `editora`
 --
 
-CREATE TABLE IF NOT EXISTS `editora` (
+CREATE TABLE `editora` (
   `id_editora` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `endereco` varchar(200) NOT NULL,
   `telefone` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `editora`
@@ -70,10 +70,10 @@ INSERT INTO `editora` (`id_editora`, `nome`, `endereco`, `telefone`) VALUES
 -- Estrutura da tabela `escritor`
 --
 
-CREATE TABLE IF NOT EXISTS `escritor` (
+CREATE TABLE `escritor` (
   `id_escritor` int(11) NOT NULL,
   `nome` varchar(100) COLLATE latin1_spanish_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Extraindo dados da tabela `escritor`
@@ -91,7 +91,7 @@ INSERT INTO `escritor` (`id_escritor`, `nome`) VALUES
 -- Estrutura da tabela `escritor_livro`
 --
 
-CREATE TABLE IF NOT EXISTS `escritor_livro` (
+CREATE TABLE `escritor_livro` (
   `id_escritor` int(11) NOT NULL,
   `id_livro` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -101,8 +101,8 @@ CREATE TABLE IF NOT EXISTS `escritor_livro` (
 --
 
 INSERT INTO `escritor_livro` (`id_escritor`, `id_livro`) VALUES
-(2, 1),
-(1, 1);
+(1, 1),
+(2, 1);
 
 -- --------------------------------------------------------
 
@@ -110,10 +110,10 @@ INSERT INTO `escritor_livro` (`id_escritor`, `id_livro`) VALUES
 -- Estrutura da tabela `forma_pgto`
 --
 
-CREATE TABLE IF NOT EXISTS `forma_pgto` (
+CREATE TABLE `forma_pgto` (
   `id` int(11) NOT NULL,
   `descricao` varchar(50) COLLATE latin1_spanish_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Extraindo dados da tabela `forma_pgto`
@@ -132,10 +132,10 @@ INSERT INTO `forma_pgto` (`id`, `descricao`) VALUES
 -- Estrutura da tabela `genero`
 --
 
-CREATE TABLE IF NOT EXISTS `genero` (
+CREATE TABLE `genero` (
   `id_genero` int(11) NOT NULL,
   `descricao` varchar(200) COLLATE latin1_spanish_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Extraindo dados da tabela `genero`
@@ -156,13 +156,13 @@ INSERT INTO `genero` (`id_genero`, `descricao`) VALUES
 -- Estrutura da tabela `livro`
 --
 
-CREATE TABLE IF NOT EXISTS `livro` (
+CREATE TABLE `livro` (
   `id_livro` int(11) NOT NULL,
   `titulo` varchar(100) NOT NULL,
   `id_editora` int(10) NOT NULL,
   `id_genero` int(10) NOT NULL,
   `preco` float NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `livro`
@@ -177,12 +177,12 @@ INSERT INTO `livro` (`id_livro`, `titulo`, `id_editora`, `id_genero`, `preco`) V
 -- Estrutura da tabela `venda`
 --
 
-CREATE TABLE IF NOT EXISTS `venda` (
+CREATE TABLE `venda` (
   `id_venda` int(10) NOT NULL,
   `data` varchar(20) NOT NULL,
   `cod_cliente` int(10) NOT NULL,
   `cod_vendedor` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `venda`
@@ -197,14 +197,14 @@ INSERT INTO `venda` (`id_venda`, `data`, `cod_cliente`, `cod_vendedor`) VALUES
 -- Estrutura da tabela `venda_produto`
 --
 
-CREATE TABLE IF NOT EXISTS `venda_produto` (
+CREATE TABLE `venda_produto` (
   `id_venda_prod` int(11) NOT NULL,
   `id_venda` int(10) NOT NULL,
   `id_livro` int(10) NOT NULL,
   `quantidade` int(3) NOT NULL,
   `preco` float NOT NULL,
   `valor_total` float NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `venda_produto`
@@ -219,12 +219,12 @@ INSERT INTO `venda_produto` (`id_venda_prod`, `id_venda`, `id_livro`, `quantidad
 -- Estrutura da tabela `vendedor`
 --
 
-CREATE TABLE IF NOT EXISTS `vendedor` (
+CREATE TABLE `vendedor` (
   `matricula_vendedor` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `cpf` varchar(14) NOT NULL,
   `telefone` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `vendedor`
@@ -257,6 +257,12 @@ ALTER TABLE `editora`
 --
 ALTER TABLE `escritor`
   ADD PRIMARY KEY (`id_escritor`);
+
+--
+-- Indexes for table `escritor_livro`
+--
+ALTER TABLE `escritor_livro`
+  ADD PRIMARY KEY (`id_escritor`,`id_livro`);
 
 --
 -- Indexes for table `forma_pgto`
@@ -306,47 +312,47 @@ ALTER TABLE `vendedor`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id_cliente` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `editora`
 --
 ALTER TABLE `editora`
-  MODIFY `id_editora` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id_editora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `escritor`
 --
 ALTER TABLE `escritor`
-  MODIFY `id_escritor` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id_escritor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `forma_pgto`
 --
 ALTER TABLE `forma_pgto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `genero`
 --
 ALTER TABLE `genero`
-  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `livro`
 --
 ALTER TABLE `livro`
-  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `venda`
 --
 ALTER TABLE `venda`
-  MODIFY `id_venda` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id_venda` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `venda_produto`
 --
 ALTER TABLE `venda_produto`
-  MODIFY `id_venda_prod` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id_venda_prod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `vendedor`
 --
 ALTER TABLE `vendedor`
-  MODIFY `matricula_vendedor` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `matricula_vendedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
