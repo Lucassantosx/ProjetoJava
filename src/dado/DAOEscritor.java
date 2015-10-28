@@ -25,7 +25,5 @@ public interface DAOEscritor {
     public Escritor retrieve(int id_escritor) throws ConexaoException,DAOException;
             
     public ArrayList<Escritor> ListarTodos() throws ConexaoException,DAOException;
-    
-       
-    
+     
 }

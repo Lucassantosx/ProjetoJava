@@ -5,54 +5,59 @@
  */
 package dado;
 
+import negocio.Editora;
+import br.com.error.ConexaoException;
+import br.com.error.DAOException;
 import br.com.util.GerenciadorConexao;
 import br.com.util.GerenciadorConexaoImpl;
 import java.sql.Connection;
-import negocio.Escritor;
-import br.com.error.*;
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
-
+import negocio.Escritor;
 
 /**
  *
  * @author Celson Rodrigues
  */
-
-public class DAOEscritorReal implements DAOEscritor{
+public class DAOEditoraReal implements DAOEditora{
     
-    private GerenciadorConexao gerenciador;
+    final private GerenciadorConexao gerenciador;
     
-    public DAOEscritorReal(){
+    public DAOEditoraReal(){
         
         gerenciador = GerenciadorConexaoImpl.getInstancia();
         
     }
     
     @Override
-    public void incluir(Escritor esc) throws ConexaoException, DAOException{
+    public void incluir(Editora edit)throws ConexaoException,DAOException{
         
         Connection c = gerenciador.conectar();
         
-        String sqlInsert = "INSERT INTO escritor (nome) VALUES (?)";
+        String sqlInsert = "INSERT INTO editora (nome, endereco, telefone) VALUES (?,?,?)";
         
         try {
             PreparedStatement pstm = c.prepareStatement(sqlInsert);
-            pstm.setString(1, esc.getNome());
+            pstm.setString(1, edit.getNome());
+            pstm.setString(2, edit.getEndereco());
+            pstm.setString(3, edit.getTelefone());
             pstm.executeUpdate();
         } catch (Exception e) {
             throw new DAOException(e);
         }finally{
             gerenciador.desconectar(c);
-            } 
+        }        
     }
     
     @Override
-    public void excluir(Integer id_escritor) throws ConexaoException, DAOException{
+    public void excluir(Integer id_escritor) throws ConexaoException,DAOException{
         
         Connection con = gerenciador.conectar();
         
-        String sqlExcluir = "DELETE FROM escritor WHERE id_escritor =?";
+        String sqlExcluir = "DELETE FROM editora WHERE id_escritor =?";
         
         try {
             PreparedStatement pstm = con.prepareStatement(sqlExcluir);
@@ -65,84 +70,69 @@ public class DAOEscritorReal implements DAOEscritor{
         }
     }
     
-    /**
-     * alterar um escritor, envia um esc como parametros
-     * @param esc
-     * @throws ConexaoException
-     * @throws DAOException
-     */
     @Override
-    public void alterar(Escritor esc) throws ConexaoException,DAOException{
+    public void alterar(Editora edit) throws ConexaoException,DAOException{
         
-        Connection conn = gerenciador.conectar();
         
-        String sqlAlterar = "UPDATE escritor SET nome WHERE id=?";
-        
-        try {
-            PreparedStatement pstm = conn.prepareStatement(sqlAlterar);
-            pstm.setString(1, esc.getNome());
-            pstm.executeUpdate();
-        } catch (Exception e) {
-        }finally{
-            gerenciador.desconectar(conn);
-        }
     }
-            
-    
     
     @Override
-    public Escritor retrieve(int id_escritor) throws ConexaoException, DAOException{
+    public Editora retrieve(int id_editora) throws ConexaoException,DAOException{
         
         Connection conn = gerenciador.conectar();
-        Escritor esc = null;
+        Editora edit = null;
         
-        String sqlRetrieve = "SELECT id_escritor, nome FROM escritor WHERE id=?";
+        String sqlRetrieve = "SELECT id_editora, nome, endereco FROM editora WHERE id=?";
         
         try {
             PreparedStatement pstm = conn.prepareStatement(sqlRetrieve);
-            pstm.setInt(1, id_escritor);
+            pstm.setInt(1, id_editora);
             ResultSet rs = pstm.executeQuery();
             if (rs.next()) {
-                esc = new Escritor();
-                esc.setId(rs.getInt("id_escritor"));
-                esc.setNome(rs.getString("nome"));
+                edit = new Editora();
+                edit.setId_editora(rs.getInt("id_editora"));
+                edit.setNome(rs.getString("nome"));
+                edit.setTelefone(rs.getString("telefone"));
+                edit.setEndereco(rs.getString("endereco"));
             }
-            return esc;
+            return edit;
         } catch (Exception e) {
             throw new DAOException();
         }finally{
             gerenciador.desconectar(conn);
         }
-            
-        
-        
     }
     
+    
     @Override
-    public ArrayList<Escritor> ListarTodos() throws ConexaoException,DAOException{
+    public ArrayList<Editora> ListarTodos() throws ConexaoException,DAOException{
         
         Connection conn = gerenciador.conectar();
         
-        ArrayList<Escritor> todosEscritores = new ArrayList();
+        ArrayList<Editora> listar = new ArrayList();
         
-        String sqlListarTodos = "SELECT id, nome FROM escritor";
+        String sqlListarTodos = "SELECT id, nome, endereco, telefone FROM editora";
         
         try {
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery(sqlListarTodos);
-            while (rs.next()) {
-                Escritor esc = new Escritor();
-                esc.setId(rs.getInt("id"));
-                esc.setNome(rs.getString("nome"));
-                todosEscritores.add(esc);
+            while (rs.next()) {                
+                Editora edit = new Editora();
+                edit.setId_editora(rs.getInt("id_editora"));
+                edit.setNome(rs.getString("nome"));
+                edit.setEndereco(rs.getString("endereco"));
+                edit.setTelefone(rs.getString("telefone"));
+                listar.add(edit);
             }
-            return todosEscritores;
+            return listar;
         } catch (Exception e) {
             throw new DAOException(e);
         }finally{
             gerenciador.desconectar(conn);
         }
-        
     }
+    
         
+    
+    
 }
