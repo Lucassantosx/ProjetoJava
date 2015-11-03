@@ -9,7 +9,6 @@ import br.com.error.ConexaoException;
 import br.com.error.DAOException;
 import java.util.ArrayList;
 import negocio.Editora;
-import negocio.Escritor;
 
 /**
  *

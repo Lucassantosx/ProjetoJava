@@ -11,11 +11,34 @@ package negocio;
  */
 public class Livro {
     
-    int id;
+    int idLivro;
     String titulo;
     float preco;
+
     
-    
-    
+
+    public int getIdLivro() {
+        return idLivro;
+    }
+
+    public void setIdLivro(int idLivro) {
+        this.idLivro = idLivro;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public float getPreco() {
+        return preco;
+    }
+
+    public void setPreco(float preco) {
+        this.preco = preco;
+    }
     
 }

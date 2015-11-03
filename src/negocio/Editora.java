@@ -11,10 +11,23 @@ package negocio;
  */
 public class Editora {
     
+    private int id_editora;
     private String nome;
     private String endereco;
     private String telefone;
 
+    
+    public Editora(String nome, String endereco, String telefone){
+        
+        this.endereco = endereco;
+        this.nome = nome;
+        this.telefone = telefone;
+        
+    }
+    
+    public Editora(){
+        
+    }
     /**
      * @return the nome
      */
@@ -55,6 +68,20 @@ public class Editora {
      */
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    /**
+     * @return the id_editora
+     */
+    public int getId_editora() {
+        return id_editora;
+    }
+
+    /**
+     * @param id_editora the id_editora to set
+     */
+    public void setId_editora(int id_editora) {
+        this.id_editora = id_editora;
     }
     
     

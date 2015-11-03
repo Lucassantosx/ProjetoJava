@@ -14,6 +14,15 @@ public class Escritor {
     private int id;
     private String nome;
 
+    public Escritor(String nome){
+        
+        this.nome = nome;
+        
+    }
+    
+    public Escritor(){
+        
+    }
     /**
      * @return the id
      */

@@ -5,10 +5,25 @@
  */
 package dado;
 
+import br.com.error.ConexaoException;
+import br.com.error.DAOException;
+import java.util.ArrayList;
+import negocio.Vendedor;
+
 /**
  *
- * @author Celson Rodrigues
+ * @author Lucas Xavier
  */
 public interface DAOVendedor {
+    
+     public void incluir(Vendedor v) throws ConexaoException,DAOException;
+    
+    public void excluir(Integer matricula) throws ConexaoException,DAOException;
+    
+    public void alterar(Vendedor v) throws ConexaoException,DAOException;
+    
+    public Vendedor retrieve(int matricula) throws ConexaoException,DAOException;
+            
+    public ArrayList<Vendedor> ListarTodos() throws ConexaoException,DAOException;
     
 }
