@@ -24,14 +24,14 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jTabbedPane1" min="-2" pref="638" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="jTabbedPane1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jTabbedPane1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -68,7 +68,7 @@
                               <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="237" max="32767" attributes="0"/>
+                      <EmptySpace pref="450" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -154,7 +154,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="259" max="32767" attributes="0"/>
+                      <EmptySpace pref="472" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -237,7 +237,7 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtEditoraNome1" alignment="0" pref="530" max="32767" attributes="0"/>
+                          <Component id="txtEditoraNome1" alignment="0" pref="743" max="32767" attributes="0"/>
                           <Component id="txtEditoraEndereco1" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtEditoraTelefone1" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -337,7 +337,7 @@
                           <Component id="txtSexoVendedor" max="32767" attributes="0"/>
                           <Component id="txtEnderecoVendedor" max="32767" attributes="0"/>
                           <Component id="txtTelefoneVendedor" max="32767" attributes="0"/>
-                          <Component id="txtNomeVendedor" alignment="0" pref="501" max="32767" attributes="0"/>
+                          <Component id="txtNomeVendedor" alignment="0" pref="714" max="32767" attributes="0"/>
                           <Component id="txtIdtVendedor" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtCPFVendedor" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtEmailVendedor" alignment="0" max="32767" attributes="0"/>
@@ -533,7 +533,7 @@
                               <Component id="jButton8" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="105" max="32767" attributes="0"/>
+                      <EmptySpace pref="318" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -661,7 +661,7 @@
                       <Component id="txtEscritor" min="-2" pref="162" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="350" max="32767" attributes="0"/>
+                      <EmptySpace pref="563" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -716,7 +716,7 @@
                       <Component id="txtEscritor1" min="-2" pref="162" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="350" max="32767" attributes="0"/>
+                      <EmptySpace pref="563" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

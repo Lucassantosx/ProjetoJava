@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dado;
+package br.com.dado;
 
 import br.com.error.ConexaoException;
 import br.com.error.DAOException;
 import java.util.ArrayList;
-import negocio.Cliente;
+import br.com.negocio.Cliente;
 
 /**
  *
@@ -22,7 +22,7 @@ public interface DAOCliente {
     
     public void alterar(Cliente c) throws ConexaoException,DAOException;
     
-    public Cliente retrieve(int id_editora) throws ConexaoException,DAOException;
+    public Cliente retrieve(int idCliente) throws ConexaoException,DAOException;
             
     public ArrayList<Cliente> ListarTodos() throws ConexaoException,DAOException;
     

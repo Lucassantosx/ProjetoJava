@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dado;
+package br.com.dado;
 
-import negocio.Editora;
+import br.com.negocio.Editora;
 import br.com.error.ConexaoException;
 import br.com.error.DAOException;
 import br.com.util.GerenciadorConexao;
@@ -16,7 +16,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import negocio.Escritor;
 
 /**
  *

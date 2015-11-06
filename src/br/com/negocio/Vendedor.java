@@ -3,40 +3,37 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package negocio;
+package br.com.negocio;
 
 /**
  *
  * @author Lucas Xavier
  */
-public class Cliente {
-
+public class Vendedor {
     
-        private int idCliente;   
-	private String CPF ;
-	private String nome ;
-	private String endereço ;
-	private String telefone ;
-	private String email ;
-        private String sexo;
-        
+    
+    private double salario ;
+    private int matricula ;
+    private String nome ;
+    private String endereço ;
+    private String telefone ;
+    private String email ;
+    private String sexo;
 
-    public int getIdCliente() {
-        return idCliente;
+    public double getSalario() {
+        return salario;
     }
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
-    }
-        
-        
-
-    public String getCPF() {
-        return CPF;
+    public void setSalario(double salario) {
+        this.salario = salario;
     }
 
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
     }
 
     public String getNome() {
@@ -78,5 +75,5 @@ public class Cliente {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
-
+	
 }

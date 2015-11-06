@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dado;
+package br.com.dado;
 
 import br.com.error.ConexaoException;
 import br.com.error.DAOException;
@@ -15,7 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import negocio.Vendedor;
+import br.com.negocio.Vendedor;
 
 /**
  *

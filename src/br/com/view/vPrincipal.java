@@ -3,16 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package br.com.view;
 
 import br.com.error.ConexaoException;
 import br.com.error.DAOException;
-import dado.DAOEditoraReal;
-import dado.DAOEscritorReal;
+import br.com.dado.DAOEditoraReal;
+import br.com.dado.DAOEscritorReal;
+import br.com.error.CampoVazioException;
+import br.com.error.DadoDuplicadoException;
+import br.com.error.DadoInvalidoException;
+import br.com.error.GeralException;
 import javax.swing.JOptionPane;
-import negocio.Editora;
-import negocio.Escritor;
-import negocio.Vendedor;
+import br.com.negocio.Editora;
+import br.com.negocio.Escritor;
+import br.com.negocio.Vendedor;
+import br.com.fachada.Fachada;
 
 /**
  *
@@ -137,7 +142,7 @@ public class vPrincipal extends javax.swing.JFrame {
                         .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton5)))
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addContainerGap(450, Short.MAX_VALUE))
         );
         jPanelVendasLayout.setVerticalGroup(
             jPanelVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,7 +189,7 @@ public class vPrincipal extends javax.swing.JFrame {
                     .addComponent(txtEditoraTelefone))
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
-                .addContainerGap(259, Short.MAX_VALUE))
+                .addContainerGap(472, Short.MAX_VALUE))
         );
         jPaneEditoralLayout.setVerticalGroup(
             jPaneEditoralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,7 +238,7 @@ public class vPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelLivroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtEditoraNome1, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
+                    .addComponent(txtEditoraNome1, javax.swing.GroupLayout.DEFAULT_SIZE, 743, Short.MAX_VALUE)
                     .addComponent(txtEditoraEndereco1)
                     .addComponent(txtEditoraTelefone1))
                 .addContainerGap())
@@ -308,7 +313,7 @@ public class vPrincipal extends javax.swing.JFrame {
                     .addComponent(txtSexoVendedor)
                     .addComponent(txtEnderecoVendedor)
                     .addComponent(txtTelefoneVendedor)
-                    .addComponent(txtNomeVendedor, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
+                    .addComponent(txtNomeVendedor, javax.swing.GroupLayout.DEFAULT_SIZE, 714, Short.MAX_VALUE)
                     .addComponent(txtIdtVendedor)
                     .addComponent(txtCPFVendedor)
                     .addComponent(txtEmailVendedor))
@@ -425,7 +430,7 @@ public class vPrincipal extends javax.swing.JFrame {
                     .addGroup(jPanelClienteLayout.createSequentialGroup()
                         .addGap(251, 251, 251)
                         .addComponent(jButton8)))
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(318, Short.MAX_VALUE))
         );
         jPanelClienteLayout.setVerticalGroup(
             jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -485,7 +490,7 @@ public class vPrincipal extends javax.swing.JFrame {
                 .addComponent(txtEscritor, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addContainerGap(350, Short.MAX_VALUE))
+                .addContainerGap(563, Short.MAX_VALUE))
         );
         jPanelEscritorLayout.setVerticalGroup(
             jPanelEscritorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -520,7 +525,7 @@ public class vPrincipal extends javax.swing.JFrame {
                 .addComponent(txtEscritor1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3)
-                .addContainerGap(350, Short.MAX_VALUE))
+                .addContainerGap(563, Short.MAX_VALUE))
         );
         jPanelGeneroLayout.setVerticalGroup(
             jPanelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -540,12 +545,12 @@ public class vPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1)
                 .addContainerGap())
@@ -561,18 +566,23 @@ public class vPrincipal extends javax.swing.JFrame {
      */
         Editora edit = new Editora(txtEditoraNome.getText(),txtEditoraEndereco.getText(),txtEditoraTelefone.getText());
         
-        
-        //DAOEscritorReal dao = new DAOEscritorReal();
-        DAOEditoraReal dao = new DAOEditoraReal();
+        Fachada f = Fachada.getInstancia();
         
         try {
-            dao.incluir(edit);
+            f.salvarEditora(edit);
             JOptionPane.showMessageDialog(null, "Registro Salvo com sucesso :D ");
         } catch (DAOException ex) {
             JOptionPane.showMessageDialog(null, "ERRO NO BD :(" + ex.getMessage());
         } catch (ConexaoException ex ){
             JOptionPane.showMessageDialog(null, "Erro no SQL :(" + ex.getMessage());
+        } catch (CampoVazioException ex){
+            JOptionPane.showMessageDialog(null, "Existe um campo vazio :(" + ex.getMessage());
+        } catch (DadoDuplicadoException ex){
+            JOptionPane.showMessageDialog(null, "Dados duplicados:(" + ex.getMessage());
+        } catch (GeralException ex){
+            JOptionPane.showMessageDialog(null, "Erro Geral :(" + ex.getMessage());
         }
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -583,7 +593,7 @@ public class vPrincipal extends javax.swing.JFrame {
         
         String salario = txtSalarioVendedor.getText();
         float fSalario = Float.valueOf(salario.trim()).floatValue();
-        Vendedor vend = new Vendedor(txtNomeVendedor.getText(), txtEnderecoVendedor.getText(), txtTelefoneVendedor.getText(),txtEmailVendedor.getText(),txtSexoVendedor.getText(),fSalario);
+        //Vendedor vend = new Vendedor(txtNomeVendedor.getText(), txtEnderecoVendedor.getText(), txtTelefoneVendedor.getText(),txtEmailVendedor.getText(),txtSexoVendedor.getText(),fSalario);
         
         
     }//GEN-LAST:event_jButton7ActionPerformed

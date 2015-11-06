@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dado;
+package br.com.dado;
 
 import br.com.error.ConexaoException;
 import br.com.error.DAOException;
 import java.util.ArrayList;
-import negocio.Escritor;
+import br.com.negocio.Escritor;
 
 /**
  *

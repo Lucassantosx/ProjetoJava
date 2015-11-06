@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dado;
+package br.com.dado;
 
 import br.com.util.GerenciadorConexao;
 import br.com.util.GerenciadorConexaoImpl;
 import java.sql.Connection;
-import negocio.Escritor;
+import br.com.negocio.Escritor;
 import br.com.error.*;
 import java.sql.*;
 import java.util.ArrayList;
