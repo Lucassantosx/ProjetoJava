@@ -8,7 +8,6 @@ package br.com.dado;
 import br.com.util.GerenciadorConexao;
 import br.com.util.GerenciadorConexaoImpl;
 import java.sql.Connection;
-import br.com.negocio.Escritor;
 import br.com.error.*;
 import br.com.negocio.Forma_pgto;
 import java.sql.*;
@@ -20,7 +19,7 @@ import java.util.ArrayList;
  * @author Celson Rodrigues
  */
 
-public class DAOForma_pgtoReal implements DAOEscritor{
+public class DAOForma_pgtoReal implements DAOForma_pgto{
     
     private GerenciadorConexao gerenciador;
     
@@ -72,7 +71,7 @@ public class DAOForma_pgtoReal implements DAOEscritor{
      * @throws ConexaoException
      * @throws DAOException
      */
-    @Override
+    
     public void alterar(Forma_pgto f) throws ConexaoException,DAOException{
         
         Connection conn = gerenciador.conectar();
@@ -92,7 +91,7 @@ public class DAOForma_pgtoReal implements DAOEscritor{
     
     
     @Override
-    public Escritor retrieve(int id_forma_pgto) throws ConexaoException, DAOException{
+    public Forma_pgto retrieve(int id_forma_pgto) throws ConexaoException, DAOException{
         
         Connection conn = gerenciador.conectar();
         Forma_pgto f = null;
@@ -106,9 +105,11 @@ public class DAOForma_pgtoReal implements DAOEscritor{
             if (rs.next()) {
                 f = new Forma_pgto();
                 f.setId(rs.getInt("id_forma_pgto"));
-                f.setNome(rs.getString("nome"));
+                f.setDescricao(rs.getString("Descrição"));
             }
-            return f;
+            
+            return f ;
+            
         } catch (Exception e) {
             throw new DAOException();
         }finally{
@@ -119,12 +120,12 @@ public class DAOForma_pgtoReal implements DAOEscritor{
         
     }
     
-    @Override
-    public ArrayList<Escritor> ListarTodos() throws ConexaoException,DAOException{
+    
+    public ArrayList<Forma_pgto> ListarTodos() throws ConexaoException,DAOException{
         
         Connection conn = gerenciador.conectar();
         
-        ArrayList<Escritor> todosEscritores = new ArrayList();
+        ArrayList<Forma_pgto> FormaPgto = new ArrayList();
         
         String sqlListarTodos = "SELECT id, nome FROM forma_pgto";
         
@@ -132,12 +133,12 @@ public class DAOForma_pgtoReal implements DAOEscritor{
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery(sqlListarTodos);
             while (rs.next()) {
-                Forma_pgto esc = new Forma_pgto();
-                esc.setId(rs.getInt("id"));
-                esc.setNome(rs.getString("nome"));
-                todosEscritores.add(esc);
+                Forma_pgto fmp = new Forma_pgto();
+                fmp.setId(rs.getInt("id"));
+                fmp.setDescricao(rs.getString("Descrição"));
+                FormaPgto.add(fmp);
             }
-            return todosEscritores;
+            return FormaPgto;
         } catch (Exception e) {
             throw new DAOException(e);
         }finally{
