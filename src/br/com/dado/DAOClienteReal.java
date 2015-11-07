@@ -21,7 +21,7 @@ import br.com.negocio.Cliente;
  *
  * @author Celson Rodrigues
  */
-public class DAOClienteReal {
+public class DAOClienteReal implements DAOCliente {
         
     final private GerenciadorConexao gerenciador;
     
@@ -54,7 +54,7 @@ public class DAOClienteReal {
         }        
     }
     
-    public void excluir(Integer idCliente) throws ConexaoException, DAOException, SQLException{
+    public void excluir(Integer idCliente) throws ConexaoException, DAOException{
         
         Connection con = gerenciador.conectar();
         

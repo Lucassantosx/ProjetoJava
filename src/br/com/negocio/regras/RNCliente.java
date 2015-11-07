@@ -83,4 +83,17 @@ public class RNCliente {
         }
         
     }
+    
+    /**
+     *
+     * @param idCliente
+     * @throws GeralException
+     * @Author Lucas Xavier
+     * @Date 07/11/15 10:06H
+     */
+    public void excluir(Integer idCliente) throws GeralException, ConexaoException, DAOException {
+       DAOCliente DCL = new DAOClienteReal();
+        DCL.excluir(idCliente);
+    
+    }
 }

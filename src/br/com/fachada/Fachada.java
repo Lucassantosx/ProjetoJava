@@ -11,6 +11,8 @@ import br.com.error.DAOException;
 import br.com.error.DadoDuplicadoException;
 import br.com.error.GeralException;
 import br.com.negocio.Editora;
+import br.com.dado.DAOClienteReal;
+import br.com.negocio.Cliente;
 import br.com.negocio.regras.RNCliente;
 import br.com.negocio.regras.RNEditora;
 
@@ -18,7 +20,8 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Celson Rodrigues
+ * @author Lucas Xavier
+ * @Date 07/11/2015 09:27H
  */
 public class Fachada {
 
@@ -55,8 +58,8 @@ public class Fachada {
         
     }
 
-    public void excluirEditora(Integer idEditra){
-        
+    public void excluirEditora(Integer idEditora) throws GeralException, ConexaoException, DAOException{
+        rnEditora.excluir(idEditora);
     }
     
     public Editora retrieveEditora(Integer idEditra){
@@ -67,4 +70,33 @@ public class Fachada {
         
     return null;
     }
+    
+    /*###########################################################
+########################## CLIENTE ##########################
+###########################################################*/
+
+    public void salvarCliente(Cliente c) throws CampoVazioException, ConexaoException, DAOException, DadoDuplicadoException, GeralException{
+        
+        rnCliente.verificaPreenchimento(c);
+        rnCliente.verificaDuplicacao(c);
+        rnCliente.grava(c);
+    }
+    
+    public void alterarCliente(Cliente c){
+        
+    }
+
+    public void excluirCliente(Integer idCliente) throws GeralException, ConexaoException, DAOException{
+        rnCliente.excluir(idCliente);
+    }
+    
+    public Cliente retrieveCliente(Integer IdCliente){
+        return null;
+    }
+    
+    public ArrayList<Cliente> listarCliente(){
+        
+    return null;
+    }
+    
 }

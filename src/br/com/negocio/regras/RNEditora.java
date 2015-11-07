@@ -5,6 +5,7 @@
  */
 package br.com.negocio.regras;
 
+
 import br.com.dado.DAOEditora;
 import br.com.dado.DAOEditoraReal;
 import br.com.error.CampoVazioException;
@@ -65,5 +66,18 @@ public class RNEditora {
             throw new GeralException("Erro de BD");
         }
         
+    }
+    
+     /**
+     *
+     * @param idEditora
+     * @throws GeralException
+     * @Author Lucas Xavier
+     * @Date 07/11/15 10:11H
+     */
+    public void excluir(Integer idEditora) throws GeralException, ConexaoException, DAOException {
+       DAOEditora DCL = new DAOEditoraReal();
+        DCL.excluir(idEditora);
+    
     }
 }
