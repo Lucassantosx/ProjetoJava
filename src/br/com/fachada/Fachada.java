@@ -13,10 +13,11 @@ import br.com.error.GeralException;
 import br.com.negocio.Editora;
 import br.com.negocio.Cliente;
 import br.com.negocio.Genero;
+import br.com.negocio.Escritor;
 import br.com.negocio.regras.RNCliente;
 import br.com.negocio.regras.RNEditora;
 import br.com.negocio.regras.RNGenero;
-
+import br.com.negocio.regras.RNEscritor;
 import java.util.ArrayList;
 
 /**
@@ -30,12 +31,14 @@ public class Fachada {
     private static RNCliente rnCliente;
     private static RNEditora rnEditora;
     private static RNGenero rnGenero;
+    private static RNEscritor rnEscritor;
     
     private Fachada(){
         
         rnCliente = new RNCliente();
         rnEditora = new RNEditora();
         rnGenero = new RNGenero();
+        rnEscritor = new RNEscritor();
     }
     
     public static Fachada getInstancia(){
@@ -56,8 +59,8 @@ public class Fachada {
         rnEditora.grava(edit);
     }
     
-    public void alterarEditora(Editora edit){
-        
+    public void alterarEditora(Editora edit) throws ConexaoException, DAOException{
+        rnEditora.alterar(edit);
     }
 
     public void excluirEditora(Integer idEditora) throws GeralException, ConexaoException, DAOException{
@@ -84,8 +87,8 @@ public class Fachada {
         rnCliente.grava(c);
     }
     
-    public void alterarCliente(Cliente c){
-        
+    public void alterarCliente(Cliente c) throws ConexaoException, DAOException{
+        rnCliente.alterar(c);
     }
 
     public void excluirCliente(Integer idCliente) throws GeralException, ConexaoException, DAOException{
@@ -112,8 +115,8 @@ public class Fachada {
         rnGenero.grava(g);
     }
     
-    public void alterarGenero(Genero g){
-        
+    public void alterarGenero(Genero g) throws ConexaoException, DAOException{
+        rnGenero.alterar(g);
     }
 
     public void excluirGenero(Integer idGenero) throws GeralException, ConexaoException, DAOException{
@@ -129,5 +132,33 @@ public class Fachada {
     return null;
     }
 
+    /*###########################################################
+########################## ESCRITOR ##########################
+###########################################################*/
+
+    public void salvarEscrito(Escritor esc) throws CampoVazioException, ConexaoException, DAOException, DadoDuplicadoException, GeralException{
+        
+        rnEscritor.verificaPreenchimento(esc);
+        rnEscritor.verificaDuplicacao(esc);
+        rnEscritor.grava(esc);
+    }
+    
+    public void alterarEscritor(Escritor esc) throws ConexaoException, DAOException{
+        rnEscritor.alterar(esc);
+    }
+
+    public void excluirEscritor(Integer idEscritor) throws GeralException, ConexaoException, DAOException{
+        rnEscritor.excluir(idEscritor);
+    }
+    
+    public Escritor retrieveEscritor(Integer idEscritor){
+        return null;
+    }
+    
+    public ArrayList<Escritor> listarEscritor(){
+        
+    return null;
+    }
+    
     
 }

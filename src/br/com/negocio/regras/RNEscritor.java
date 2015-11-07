@@ -26,18 +26,18 @@ public class RNEscritor{
         dao = new DAOEscritorReal();
     }
 
-    public void verificaPreenchimento(Escritor es)throws CampoVazioException{
-        if(es.getNome()==null || es.getNome().trim().isEmpty()){
+    public void verificaPreenchimento(Escritor esc)throws CampoVazioException{
+        if(esc.getNome()==null || esc.getNome().trim().isEmpty()){
             throw new CampoVazioException("Nome vazio");
         }
     }
     
     
-   public void verificaDuplicacao(Escritor es) throws br.com.error.ConexaoException, br.com.error.DAOException, br.com.error.DadoDuplicadoException, GeralException{
+   public void verificaDuplicacao(Escritor esc) throws br.com.error.ConexaoException, br.com.error.DAOException, br.com.error.DadoDuplicadoException, GeralException{
         
         try {
             
-            Escritor novoEscritor = dao.retrieve(es.getId());
+            Escritor novoEscritor = dao.retrieve(esc.getId());
             if(novoEscritor!=null){
                 throw new br.com.error.DadoDuplicadoException("Escritor Já Cadastrado");
             }
@@ -49,15 +49,39 @@ public class RNEscritor{
     }
         
         
-    public void grava(Escritor es) throws GeralException{
+    public void grava(Escritor esc) throws GeralException{
         
         try {
-            dao.incluir(es);
+            dao.incluir(esc);
         }catch(br.com.error.DAOException e){
             throw new GeralException("Erro de SQL");
         }catch(br.com.error.ConexaoException e){
             throw new GeralException("Erro de BD");
         }
+        
+    }
+    /**
+     *
+     * @param idEscritor
+     * @Author Lucas Xavier
+     * @Date 07/11/15 11:22H
+     */
+     public void excluir(Integer idEscritor) throws GeralException, ConexaoException, DAOException {
+       DAOEscritor DCL = new DAOEscritorReal();
+        DCL.excluir(idEscritor);
+    
+    }
+     /**
+     *
+     * @param esc
+     * @throws br.com.error.ConexaoException
+     * @Author Lucas Xavier
+     * @Date 07/11/15 11:24H
+     */
+     public void alterar (Escritor esc) throws ConexaoException, DAOException{
+    DAOEscritor DET = new DAOEscritorReal();
+    DET.alterar(esc);
+        
         
     }
 }

@@ -14,6 +14,7 @@ import br.com.error.DAOException;
 import br.com.error.DadoDuplicadoException;
 import br.com.error.GeralException;
 import br.com.negocio.Editora;
+import br.com.negocio.Escritor;
 
 /**
  *
@@ -80,4 +81,17 @@ public class RNEditora {
         DCL.excluir(idEditora);
     
     }
+     /**
+     *
+     * @Author Lucas Xavier
+     * @Date 07/11/15 11:20H
+     */
+     public void alterar (Editora edit) throws ConexaoException, DAOException{
+    DAOEditora DET = new DAOEditoraReal();
+    DET.alterar(edit);
+        
+        
+    }
+
+    
 }

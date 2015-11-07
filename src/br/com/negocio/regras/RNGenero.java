@@ -14,6 +14,7 @@ import br.com.error.ConexaoException;
 import br.com.error.DAOException;
 import br.com.error.DadoDuplicadoException;
 import br.com.error.GeralException;
+import br.com.negocio.Escritor;
 import br.com.negocio.Genero;
 
 /**
@@ -81,6 +82,19 @@ public class RNGenero {
                
     }
         
+    /**
+     *
+     * @param g
+     * @throws br.com.error.ConexaoException
+     * @Author Lucas Xavier
+     * @Date 07/11/15 11:25H
+     */
+     public void alterar (Genero g) throws ConexaoException, DAOException{
+    DAOGenero DGN = new DAOGeneroReal();
+    DGN.alterar(g);
+        
+        
+    }
       
         
     }

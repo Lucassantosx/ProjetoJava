@@ -96,4 +96,12 @@ public class RNCliente {
         DCL.excluir(idCliente);
     
     }
+    
+    public void alterar (Cliente c) throws ConexaoException, DAOException{
+    DAOCliente DCL = new DAOClienteReal();
+    DCL.alterar(c);
+        
+        
+    }
+    
 }
