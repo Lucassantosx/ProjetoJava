@@ -24,7 +24,7 @@ public class RNCliente {
     
     public RNCliente(){
         
-        dao = (DAOCliente) new DAOClienteReal();
+        dao = new DAOClienteReal();
         
     }
     

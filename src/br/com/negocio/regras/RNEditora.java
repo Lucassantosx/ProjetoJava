@@ -14,7 +14,6 @@ import br.com.error.DAOException;
 import br.com.error.DadoDuplicadoException;
 import br.com.error.GeralException;
 import br.com.negocio.Editora;
-import br.com.negocio.Escritor;
 
 /**
  *

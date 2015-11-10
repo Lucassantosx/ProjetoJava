@@ -21,7 +21,7 @@ import br.com.negocio.Livro;
  *
  * @author Lucas Xavier
  */
-public class DAOLivroReal {
+public class DAOLivroReal implements DAOLivro{
     
     final private GerenciadorConexao gerenciador;
     

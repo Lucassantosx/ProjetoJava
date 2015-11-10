@@ -27,7 +27,7 @@ public class RNGenero {
 
     public RNGenero() {
 
-        dao = (DAOGenero) new DAOGeneroReal();
+        dao = new DAOGeneroReal();
 
     }
 

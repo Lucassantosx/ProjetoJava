@@ -10,7 +10,6 @@ import br.com.dado.DAOEscritorReal;
 import br.com.error.CampoVazioException;
 import br.com.error.ConexaoException;
 import br.com.error.DAOException;
-import br.com.error.DadoDuplicadoException;
 import br.com.error.GeralException;
 import br.com.negocio.Escritor;
 /**

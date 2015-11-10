@@ -11,4 +11,10 @@ package br.com.negocio;
  */
 public class Venda {
     
+    String data = null;
+    Livro livro = null;
+    Vendedor vendedor = null;
+    Cliente cliente = null;
+            
+    
 }

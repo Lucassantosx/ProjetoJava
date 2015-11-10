@@ -21,7 +21,7 @@ import br.com.negocio.Vendedor;
  *
  * @author Lucas Xavier
  */
-public class DAOVendedorReal {
+public class DAOVendedorReal implements DAOVendedor{
     
      final private GerenciadorConexao gerenciador;
     
