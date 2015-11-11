@@ -96,7 +96,7 @@ public class DAOEscritorReal implements DAOEscritor{
         Connection conn = gerenciador.conectar();
         Escritor esc = null;
         
-        String sqlRetrieve = "SELECT id_escritor, nome FROM escritor WHERE id=?";
+        String sqlRetrieve = "SELECT id_escritor, nome FROM escritor WHERE id_escritor=?";
         
         try {
             PreparedStatement pstm = conn.prepareStatement(sqlRetrieve);

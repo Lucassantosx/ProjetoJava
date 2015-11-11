@@ -37,6 +37,7 @@ public class DAOClienteReal implements DAOCliente {
         Connection cc = gerenciador.conectar();
         
         String sqlInsert = "INSERT INTO cliente (nome, identidade, cpf, endereco, telefone, email, sexo) VALUES (?,?,?,?,?,?,?)";
+        //String sqlInsert = "INSERT INTO cliente (nome) VALUES (?)";
         
         try {
             PreparedStatement pstm = cc.prepareStatement(sqlInsert);

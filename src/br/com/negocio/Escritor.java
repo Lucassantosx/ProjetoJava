@@ -15,7 +15,7 @@ public class Escritor {
     private String nome;
 
     public Escritor(String nome){
-        
+       
         this.nome = nome;
         
     }
@@ -23,6 +23,7 @@ public class Escritor {
     public Escritor(){
         
     }
+
     /**
      * @return the id
      */

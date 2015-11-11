@@ -104,7 +104,7 @@ public class Fachada {
     return null;
     }
 
-    /*###########################################################
+/*###########################################################
 ########################## GENERO ##########################
 ###########################################################*/
 
@@ -136,7 +136,7 @@ public class Fachada {
 ########################## ESCRITOR ##########################
 ###########################################################*/
 
-    public void salvarEscrito(Escritor esc) throws CampoVazioException, ConexaoException, DAOException, DadoDuplicadoException, GeralException{
+    public void salvarEscritor(Escritor esc) throws CampoVazioException, ConexaoException, DAOException, DadoDuplicadoException, GeralException{
         
         rnEscritor.verificaPreenchimento(esc);
         rnEscritor.verificaDuplicacao(esc);
@@ -159,6 +159,5 @@ public class Fachada {
         
     return null;
     }
-    
     
 }

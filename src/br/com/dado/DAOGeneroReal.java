@@ -38,12 +38,11 @@ public class DAOGeneroReal implements DAOGenero {
         
         Connection cc = gerenciador.conectar();
         
-        String sqlInsert = "INSERT INTO Genero (idGenero , Descricao) VALUES (?,?)";
+        String sqlInsert = "INSERT INTO genero (descricao) VALUES (?)";
         
         try {
             PreparedStatement pstm = cc.prepareStatement(sqlInsert);
-            pstm.setInt(1, g.getIdGenero());
-            pstm.setString(2, g.getDescricao());
+            pstm.setString(1, g.getDescricao());
             pstm.executeUpdate();
         } catch (Exception e) {
             throw new DAOException(e);
@@ -95,7 +94,7 @@ public class DAOGeneroReal implements DAOGenero {
         Connection conn = gerenciador.conectar();
         Genero g = null;
         
-        String sqlRetrieve = "SELECT idGenero, descricao FROM Genero WHERE idGenero=?";
+        String sqlRetrieve = "SELECT id_genero, descricao FROM genero WHERE id_genero=?";
         
         try {
             PreparedStatement pstm = conn.prepareStatement(sqlRetrieve);
@@ -103,8 +102,8 @@ public class DAOGeneroReal implements DAOGenero {
             ResultSet rs = pstm.executeQuery();
             if (rs.next()) {
                 g = new Genero();
-                g.getIdGenero(rs.getInt("idGenero"));
-                g.setDescricao(rs.getString("Descricao"));
+                g.getIdGenero(rs.getInt("id_genero"));
+                g.setDescricao(rs.getString("descricao"));
             }
             return g;
         } catch (Exception e) {

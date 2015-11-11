@@ -14,7 +14,17 @@ package br.com.negocio;
 public class Genero {
     
     private int idGenero;
-    private String Descricao;
+    private String descricao;
+    
+    public Genero(String descricao){
+        
+        this.descricao = descricao;
+        
+    }
+    
+    public Genero(){
+        
+    }
     
     public int getIdGenero(){
         return this.idGenero;
@@ -24,10 +34,10 @@ public class Genero {
     }
   
     public String getDescricao(){
-        return this.Descricao;
+        return this.descricao;
     }
     public void setDescricao(String Descricao){
-        this.Descricao = Descricao;
+        this.descricao = Descricao;
     }
 
     public void getIdGenero(int aInt) {

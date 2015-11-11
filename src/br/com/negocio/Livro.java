@@ -14,7 +14,9 @@ public class Livro {
     int idLivro;
     String titulo;
     float preco;
-
+    
+    Genero genero = null;
+    Editora editora = null;
     
 
     public int getIdLivro() {

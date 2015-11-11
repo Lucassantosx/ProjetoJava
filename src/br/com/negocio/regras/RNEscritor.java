@@ -10,6 +10,7 @@ import br.com.dado.DAOEscritorReal;
 import br.com.error.CampoVazioException;
 import br.com.error.ConexaoException;
 import br.com.error.DAOException;
+import br.com.error.DadoDuplicadoException;
 import br.com.error.GeralException;
 import br.com.negocio.Escritor;
 /**
@@ -27,22 +28,23 @@ public class RNEscritor{
 
     public void verificaPreenchimento(Escritor esc)throws CampoVazioException{
         if(esc.getNome()==null || esc.getNome().trim().isEmpty()){
-            throw new CampoVazioException("Nome vazio");
+            throw new CampoVazioException(" Nome vazio");
         }
     }
     
     
-   public void verificaDuplicacao(Escritor esc) throws br.com.error.ConexaoException, br.com.error.DAOException, br.com.error.DadoDuplicadoException, GeralException{
+   public void verificaDuplicacao(Escritor esc) throws ConexaoException, DAOException, DadoDuplicadoException, GeralException{
         
         try {
             
             Escritor novoEscritor = dao.retrieve(esc.getId());
+            
             if(novoEscritor!=null){
-                throw new br.com.error.DadoDuplicadoException("Escritor Já Cadastrado");
+                throw new DadoDuplicadoException("Escritor Já Cadastrado");
             }
-        }catch(br.com.error.DAOException e){
+        }catch(DAOException e){
             throw new GeralException("Erro de SQL");
-        }catch(br.com.error.ConexaoException e){
+        }catch(ConexaoException e){
             throw new GeralException("Erro de BD");
         }
     }
@@ -52,9 +54,9 @@ public class RNEscritor{
         
         try {
             dao.incluir(esc);
-        }catch(br.com.error.DAOException e){
+        }catch(DAOException e){
             throw new GeralException("Erro de SQL");
-        }catch(br.com.error.ConexaoException e){
+        }catch(ConexaoException e){
             throw new GeralException("Erro de BD");
         }
         
@@ -66,8 +68,8 @@ public class RNEscritor{
      * @Date 07/11/15 11:22H
      */
      public void excluir(Integer idEscritor) throws GeralException, ConexaoException, DAOException {
-       DAOEscritor DCL = new DAOEscritorReal();
-        DCL.excluir(idEscritor);
+       DAOEscritor DE = new DAOEscritorReal();
+        DE.excluir(idEscritor);
     
     }
      /**
@@ -78,8 +80,8 @@ public class RNEscritor{
      * @Date 07/11/15 11:24H
      */
      public void alterar (Escritor esc) throws ConexaoException, DAOException{
-    DAOEscritor DET = new DAOEscritorReal();
-    DET.alterar(esc);
+    DAOEscritor DE = new DAOEscritorReal();
+    DE.alterar(esc);
         
         
     }
