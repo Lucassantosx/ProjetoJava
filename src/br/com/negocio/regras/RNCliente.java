@@ -41,7 +41,7 @@ public class RNCliente {
         if(c.getCPF()==null || c.getCPF().trim().isEmpty()){
             throw new CampoVazioException("CPF vazio");
         }
-        if(c.getEndereço()==null || c.getEndereço().trim().isEmpty()){
+        if(c.getEndereco()==null || c.getEndereco().trim().isEmpty()){
             throw new CampoVazioException("Endereço vazio");
         }
         if(c.getTelefone()==null || c.getTelefone().trim().isEmpty()){

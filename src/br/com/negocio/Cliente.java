@@ -12,13 +12,15 @@ package br.com.negocio;
 public class Cliente {
 
     
-        private int idCliente;   
-	private String CPF ;
-	private String nome ;
-	private String endereço ;
+        private int idCliente;
+        private String nome;
+        private String identidade;
+        private String CPF ;
+	private String endereco ;
 	private String telefone ;
 	private String email ;
         private String sexo;
+        
         
 
     public int getIdCliente() {
@@ -28,7 +30,6 @@ public class Cliente {
     public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
     }
-        
         
 
     public String getCPF() {
@@ -47,12 +48,12 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public String getEndereço() {
-        return endereço;
+    public String getEndereco() {
+        return endereco;
     }
 
     public void setEndereço(String endereço) {
-        this.endereço = endereço;
+        this.endereco = endereço;
     }
 
     public String getTelefone() {
@@ -77,6 +78,14 @@ public class Cliente {
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
+    }
+
+    public String getIdentidade() {
+        return identidade;
+    }
+
+    public void setIdentidade(String identidade) {
+        this.identidade = identidade;
     }
 
 }

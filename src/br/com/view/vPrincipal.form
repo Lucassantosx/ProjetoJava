@@ -23,10 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jTabbedPane1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jTabbedPane1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -62,7 +59,7 @@
                       <Component id="jTextField5" min="-2" pref="255" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="466" max="32767" attributes="0"/>
+                      <EmptySpace pref="482" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -114,7 +111,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel10" max="32767" attributes="0"/>
-                          <Component id="jLabel9" alignment="1" pref="131" max="32767" attributes="0"/>
+                          <Component id="jLabel9" alignment="1" pref="147" max="32767" attributes="0"/>
                           <Component id="jLabel8" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
@@ -229,7 +226,7 @@
                                   <Group type="102" attributes="0">
                                       <Component id="txtEditoraEndereco1" min="-2" pref="603" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jButton6" pref="189" max="32767" attributes="0"/>
+                                      <Component id="jButton6" pref="205" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -339,54 +336,48 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel23" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="txtClienteTelefone" min="-2" pref="356" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" pref="80" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="txtClienteSexo" min="-2" pref="141" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jButton8" max="32767" attributes="0"/>
+                          </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="jLabel18" alignment="0" pref="90" max="32767" attributes="0"/>
                                   <Component id="jLabel17" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtEditoraNome3" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="txtEditoraEndereco3" min="-2" pref="287" max="-2" attributes="0"/>
+                                      <Component id="txtClienteIdt" min="-2" pref="287" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jLabel19" min="-2" pref="90" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtEditoraTelefone3" max="32767" attributes="0"/>
+                                      <Component id="txtClienteCPF" max="32767" attributes="0"/>
                                   </Group>
+                                  <Component id="txtClienteNome" min="-2" pref="800" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel23" min="-2" pref="90" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="txtEditoraTelefone7" min="-2" pref="356" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="txtEditoraTelefone4" min="-2" pref="88" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="txtEditoraTelefone5" min="-2" pref="174" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtEditoraTelefone6" max="32767" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="jButton8" min="-2" pref="121" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="264" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="txtClienteDtNascimento" min="-2" pref="88" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="txtClienteEmail" min="-2" pref="174" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="txtClienteEnd" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -399,29 +390,31 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtEditoraNome3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtClienteNome" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtEditoraEndereco3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtClienteIdt" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtEditoraTelefone3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtClienteCPF" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtEditoraTelefone4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtClienteDtNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtEditoraTelefone5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtClienteEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtEditoraTelefone6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtClienteEnd" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtEditoraTelefone7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtClienteTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtClienteSexo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="193" max="32767" attributes="0"/>
                   </Group>
@@ -434,7 +427,7 @@
                 <Property name="text" type="java.lang.String" value="Nome"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtEditoraNome3">
+            <Component class="javax.swing.JTextField" name="txtClienteNome">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel18">
               <Properties>
@@ -446,9 +439,9 @@
                 <Property name="text" type="java.lang.String" value="CPF:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtEditoraEndereco3">
+            <Component class="javax.swing.JTextField" name="txtClienteIdt">
             </Component>
-            <Component class="javax.swing.JTextField" name="txtEditoraTelefone3">
+            <Component class="javax.swing.JTextField" name="txtClienteCPF">
             </Component>
             <Component class="javax.swing.JButton" name="jButton8">
               <Properties>
@@ -458,7 +451,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtEditoraTelefone4">
+            <Component class="javax.swing.JTextField" name="txtClienteDtNascimento">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>
@@ -480,11 +473,18 @@
                 <Property name="text" type="java.lang.String" value="Telefone:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtEditoraTelefone5">
+            <Component class="javax.swing.JTextField" name="txtClienteEmail">
             </Component>
-            <Component class="javax.swing.JTextField" name="txtEditoraTelefone6">
+            <Component class="javax.swing.JTextField" name="txtClienteEnd">
             </Component>
-            <Component class="javax.swing.JTextField" name="txtEditoraTelefone7">
+            <Component class="javax.swing.JTextField" name="txtClienteTelefone">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sexo:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtClienteSexo">
             </Component>
           </SubComponents>
         </Container>
@@ -507,7 +507,7 @@
                       <Component id="txtEscritor" min="-2" pref="162" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="621" max="32767" attributes="0"/>
+                      <EmptySpace pref="637" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -562,7 +562,7 @@
                       <Component id="txtEscritor1" min="-2" pref="162" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="621" max="32767" attributes="0"/>
+                      <EmptySpace pref="637" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -654,7 +654,7 @@
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="txtSalarioVendedor" min="-2" pref="87" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jButton7" pref="130" max="32767" attributes="0"/>
+                                              <Component id="jButton7" pref="146" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>

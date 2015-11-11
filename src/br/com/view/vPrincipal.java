@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
 import br.com.negocio.Editora;
 import br.com.negocio.Escritor;
 import br.com.fachada.Fachada;
+import br.com.negocio.Cliente;
+
 
 /**
  *
@@ -63,20 +65,22 @@ public class vPrincipal extends javax.swing.JFrame {
         jComboBoxEditora = new javax.swing.JComboBox();
         jPanelCliente = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
-        txtEditoraNome3 = new javax.swing.JTextField();
+        txtClienteNome = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        txtEditoraEndereco3 = new javax.swing.JTextField();
-        txtEditoraTelefone3 = new javax.swing.JTextField();
+        txtClienteIdt = new javax.swing.JTextField();
+        txtClienteCPF = new javax.swing.JTextField();
         jButton8 = new javax.swing.JButton();
-        txtEditoraTelefone4 = new javax.swing.JTextField();
+        txtClienteDtNascimento = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        txtEditoraTelefone5 = new javax.swing.JTextField();
-        txtEditoraTelefone6 = new javax.swing.JTextField();
-        txtEditoraTelefone7 = new javax.swing.JTextField();
+        txtClienteEmail = new javax.swing.JTextField();
+        txtClienteEnd = new javax.swing.JTextField();
+        txtClienteTelefone = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtClienteSexo = new javax.swing.JTextField();
         jPanelEscritor = new javax.swing.JPanel();
         jLabelEscritor = new javax.swing.JLabel();
         txtEscritor = new javax.swing.JTextField();
@@ -123,7 +127,7 @@ public class vPrincipal extends javax.swing.JFrame {
                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton5)
-                .addContainerGap(466, Short.MAX_VALUE))
+                .addContainerGap(482, Short.MAX_VALUE))
         );
         jPanelVendasLayout.setVerticalGroup(
             jPanelVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,7 +164,7 @@ public class vPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPaneEditoralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(10, 10, 10)
                 .addGroup(jPaneEditoralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -239,7 +243,7 @@ public class vPrincipal extends javax.swing.JFrame {
                             .addGroup(jPanelLivroLayout.createSequentialGroup()
                                 .addComponent(txtEditoraEndereco1, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)))))
+                                .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanelLivroLayout.setVerticalGroup(
@@ -288,50 +292,50 @@ public class vPrincipal extends javax.swing.JFrame {
 
         jLabel23.setText("Telefone:");
 
+        jLabel3.setText("Sexo:");
+
         javax.swing.GroupLayout jPanelClienteLayout = new javax.swing.GroupLayout(jPanelCliente);
         jPanelCliente.setLayout(jPanelClienteLayout);
         jPanelClienteLayout.setHorizontalGroup(
             jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelClienteLayout.createSequentialGroup()
-                .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanelClienteLayout.createSequentialGroup()
-                        .addContainerGap()
+                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtClienteTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtClienteSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanelClienteLayout.createSequentialGroup()
                         .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEditoraNome3)
+                        .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanelClienteLayout.createSequentialGroup()
-                                .addComponent(txtEditoraEndereco3, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtClienteIdt, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtEditoraTelefone3))))
+                                .addComponent(txtClienteCPF))
+                            .addComponent(txtClienteNome, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanelClienteLayout.createSequentialGroup()
-                        .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelClienteLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtEditoraTelefone7, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelClienteLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel20)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtEditoraTelefone4, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel21)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtEditoraTelefone5, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel22)))
-                        .addGap(5, 5, 5)
-                        .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEditoraTelefone6)
-                            .addGroup(jPanelClienteLayout.createSequentialGroup()
-                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 264, Short.MAX_VALUE)))))
+                        .addComponent(jLabel20)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtClienteDtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtClienteEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel22)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtClienteEnd)))
                 .addContainerGap())
         );
         jPanelClienteLayout.setVerticalGroup(
@@ -340,26 +344,28 @@ public class vPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
-                    .addComponent(txtEditoraNome3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtClienteNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
-                    .addComponent(txtEditoraEndereco3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtClienteIdt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19)
-                    .addComponent(txtEditoraTelefone3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtClienteCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(txtEditoraTelefone4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtClienteDtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21)
-                    .addComponent(txtEditoraTelefone5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtClienteEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22)
-                    .addComponent(txtEditoraTelefone6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtClienteEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
-                    .addComponent(txtEditoraTelefone7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8))
+                    .addComponent(txtClienteTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton8)
+                    .addComponent(jLabel3)
+                    .addComponent(txtClienteSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(193, Short.MAX_VALUE))
         );
 
@@ -385,7 +391,7 @@ public class vPrincipal extends javax.swing.JFrame {
                 .addComponent(txtEscritor, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addContainerGap(621, Short.MAX_VALUE))
+                .addContainerGap(637, Short.MAX_VALUE))
         );
         jPanelEscritorLayout.setVerticalGroup(
             jPanelEscritorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -420,7 +426,7 @@ public class vPrincipal extends javax.swing.JFrame {
                 .addComponent(txtEscritor1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3)
-                .addContainerGap(621, Short.MAX_VALUE))
+                .addContainerGap(637, Short.MAX_VALUE))
         );
         jPanelGeneroLayout.setVerticalGroup(
             jPanelGeneroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -500,7 +506,7 @@ public class vPrincipal extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(txtSalarioVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)))))))
+                                        .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)))))))
                 .addContainerGap())
         );
         jPanelVendedorLayout.setVerticalGroup(
@@ -541,9 +547,7 @@ public class vPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -578,6 +582,8 @@ public class vPrincipal extends javax.swing.JFrame {
         } catch (GeralException ex){
             JOptionPane.showMessageDialog(null, "Erro Geral :(" + ex.getMessage());
         }
+        
+        
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -602,10 +608,6 @@ public class vPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         Escritor esc = new Escritor(txtEscritor.getText());
@@ -626,6 +628,51 @@ public class vPrincipal extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+
+        /**
+        * Salvar novo cliente
+        */
+
+        Cliente cliente = new Cliente();
+
+        cliente.setNome(txtClienteCPF.getText());
+        cliente.setIdentidade(txtClienteIdt.getName());
+        cliente.setEmail(txtClienteEmail.getText());
+        cliente.setEndereço(txtClienteEnd.getText());
+        cliente.setCPF(txtClienteCPF.getText());
+        cliente.setNome(txtClienteNome.getText());
+        cliente.setSexo(txtClienteSexo.getText());
+        cliente.setTelefone(txtClienteTelefone.getText());
+        
+        Fachada f = Fachada.getInstancia();
+        
+        try {
+            f.salvarCliente(cliente);
+        } catch (CampoVazioException ex) {
+            JOptionPane.showMessageDialog(null, "Erro no SQL :-(" + ex.getMessage());
+        } catch (ConexaoException ex) {
+            JOptionPane.showMessageDialog(null, "Erro de conexão :-(" + ex.getMessage());
+        } catch (DadoDuplicadoException ex) {
+            JOptionPane.showMessageDialog(null, "Cliente duplicado :-(" + ex.getMessage());
+        } catch (GeralException ex) {
+            JOptionPane.showMessageDialog(null, "Erro Geral :-(" + ex.getMessage());
+        } catch (DAOException ex) {
+            JOptionPane.showMessageDialog(null, "Erro  DAO :(" + ex.getMessage());
+        }
+        
+        /*
+        txtClienteCPF.setText(null);
+        txtClienteDtNascimento.setText(null);
+        txtClienteEmail.setText(null);
+        txtClienteEnd.setText(null);
+        txtClienteIdt.setText(null);
+        txtClienteSexo.setText(null);
+        txtClienteTelefone.setAction(null);
+        */
+        
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -692,6 +739,7 @@ public class vPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -707,18 +755,19 @@ public class vPrincipal extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField txtCPFVendedor;
+    private javax.swing.JTextField txtClienteCPF;
+    private javax.swing.JTextField txtClienteDtNascimento;
+    private javax.swing.JTextField txtClienteEmail;
+    private javax.swing.JTextField txtClienteEnd;
+    private javax.swing.JTextField txtClienteIdt;
+    private javax.swing.JTextField txtClienteNome;
+    private javax.swing.JTextField txtClienteSexo;
+    private javax.swing.JTextField txtClienteTelefone;
     private javax.swing.JTextField txtEditoraEndereco;
     private javax.swing.JTextField txtEditoraEndereco1;
-    private javax.swing.JTextField txtEditoraEndereco3;
     private javax.swing.JTextField txtEditoraNome;
     private javax.swing.JTextField txtEditoraNome1;
-    private javax.swing.JTextField txtEditoraNome3;
     private javax.swing.JTextField txtEditoraTelefone;
-    private javax.swing.JTextField txtEditoraTelefone3;
-    private javax.swing.JTextField txtEditoraTelefone4;
-    private javax.swing.JTextField txtEditoraTelefone5;
-    private javax.swing.JTextField txtEditoraTelefone6;
-    private javax.swing.JTextField txtEditoraTelefone7;
     private javax.swing.JTextField txtEmailVendedor;
     private javax.swing.JTextField txtEnderecoVendedor;
     private javax.swing.JTextField txtEscritor;

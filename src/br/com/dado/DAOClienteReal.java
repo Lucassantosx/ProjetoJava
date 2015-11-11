@@ -31,18 +31,19 @@ public class DAOClienteReal implements DAOCliente {
         
     }
     
+    @Override
     public void incluir(Cliente c)throws ConexaoException,DAOException{
         
         Connection cc = gerenciador.conectar();
         
-        String sqlInsert = "INSERT INTO Cliente (idCliente,cpf, nome, endereco, telefone, email, sexo) VALUES (?,?,?,?,?,?,?)";
+        String sqlInsert = "INSERT INTO cliente (nome, identidade, cpf, endereco, telefone, email, sexo) VALUES (?,?,?,?,?,?,?)";
         
         try {
             PreparedStatement pstm = cc.prepareStatement(sqlInsert);
-            pstm.setInt(1, c.getIdCliente() );
-            pstm.setString(2, c.getCPF());
-            pstm.setString(3, c.getNome() );
-            pstm.setString(4, c.getEndereço());
+            pstm.setString(1, c.getNome());
+            pstm.setString(2, c.getIdentidade());
+            pstm.setString(3, c.getCPF());
+            pstm.setString(4, c.getEndereco());
             pstm.setString(5, c.getTelefone());
             pstm.setString(6, c.getEmail());
             pstm.setString(7, c.getSexo());
@@ -54,6 +55,8 @@ public class DAOClienteReal implements DAOCliente {
         }        
     }
     
+    
+    @Override
     public void excluir(Integer idCliente) throws ConexaoException, DAOException{
         
         Connection con = gerenciador.conectar();
@@ -80,7 +83,7 @@ public class DAOClienteReal implements DAOCliente {
             PreparedStatement pstm = con.prepareStatement(sql);
             pstm.setString(1, c.getCPF() );
             pstm.setString(2, c.getNome() );
-            pstm.setString(3, c.getEndereço());
+            pstm.setString(3, c.getEndereco());
             pstm.setString(4, c.getTelefone());
             pstm.setString(5, c.getEmail());
             pstm.setString(6, c.getSexo());

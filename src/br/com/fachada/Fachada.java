@@ -82,8 +82,8 @@ public class Fachada {
 
     public void salvarCliente(Cliente c) throws CampoVazioException, ConexaoException, DAOException, DadoDuplicadoException, GeralException{
         
-        rnCliente.verificaPreenchimento(c);
-        rnCliente.verificaDuplicacao(c);
+        //rnCliente.verificaPreenchimento(c);
+        //rnCliente.verificaDuplicacao(c);
         rnCliente.grava(c);
     }
     
